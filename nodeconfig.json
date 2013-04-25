@@ -13,7 +13,7 @@
         },
         {
           "browserName": "*iexplore",
-          "version": "8",
+          "version": "%IE_VERSION%",
           "platform": "WINDOWS",
           "maxInstances": 1,
           "seleniumProtocol": "Selenium"
@@ -30,7 +30,7 @@
         },
         {
           "browserName": "internet explorer",
-          "version": "8",
+          "version": "%IE_VERSION%",
           "platform": "WINDOWS",
           "maxInstances": 1,
           "seleniumProtocol": "WebDriver"

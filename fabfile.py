@@ -80,7 +80,7 @@ def updateNode():
         put("selenium-node-stop.bat", SELENIUM_PATH)
         put("selenium-node-stop.sh", SELENIUM_PATH)
     with cd(SELENIUM_PATH):
-        run("PATH=/cygdrive/c/Python27/Scripts:$PATH fab -f initnode.py updateHubHost")
+        run("PATH=/cygdrive/c/Python27/Scripts:$PATH fab -f initnode.py initNodeConfig")
         if processExists:
             run("./selenium-node-start.sh")
 
