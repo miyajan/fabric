@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from datetime import datetime
 from fabric.api import cd, env, put, run, roles, execute
 from fabric.utils import puts
 
@@ -25,7 +26,6 @@ env.password = 'cybozu'
 
 FABRIC_PATH = "/cygdrive/c/Users/cybozu/Desktop/fabric"
 SELENIUM_PATH = "/cygdrive/c/Users/cybozu/Desktop/selenium"
-
 
 
 @roles('hub')
@@ -90,5 +90,8 @@ def updateNode():
             run("./selenium-node-start.sh")
 
 def updateAll():
+    start = datetime.now()
     execute(updateHub)
     execute(updateNode)
+    end = datetime.now()
+    puts("updateAll execution time: " + str(end - start))
