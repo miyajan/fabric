@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from fabric.api import cd, env, put, run, roles, execute
 from fabric.utils import puts
 
@@ -9,6 +11,9 @@ def _get_servers(file_name):
         except ValueError:
             break
     return servers
+
+# hostが応答しないなどのときにエラーで落ちないようにする
+env.skip_bad_hosts = True
 
 env.roledefs = {
     'hub': _get_servers("hub.conf"),
