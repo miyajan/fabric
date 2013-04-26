@@ -1,3 +1,5 @@
+set PATH=c:\cygwin\bin;%PATH%
+
 cd %~dp0
 
-fab -f initnode.py initnode
+bash --login -c "cd /cygdrive/c/Users/cybozu/Desktop/selenium; fab -f initnode.py initnode"
